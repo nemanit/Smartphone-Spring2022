@@ -19,9 +19,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var lbsymbol: UILabel!
     @IBOutlet weak var tblView: UITableView!
     
+    @IBOutlet weak var lbdayhigh: UILabel!
+    @IBOutlet weak var lbdaylow: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         stocksModel = initializeStocks()
+        let currentURL = getStockURL("AAPL")
+        
+        getStockData(currentURL).done { stockModel in
+            self.lbname.text = stockModel.name
+            self.lbsymbol.text = stockModel.symbol
+            self.lbprice.text = "Price: $\(stockModel.price)"
+            self.lbdayhigh.text = "Day High: $\(stockModel.dayHigh)"
+            self.lbdaylow.text = "Day Low: $\(stockModel.dayLow)"
+        }
+        .catch { error in
+            print(error.localizedDescription)
+        }
         
     }
     
@@ -55,6 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let stockModel = stocksModel?[indexPath.row] else {return cell}
 
         cell.symbollabel.text = stockModel.symbol
+        cell.nameLabel.text = stockModel.name
         cell.stockSymbol = stockModel.symbol
         cell.stock = stockModel.name
         cell.sendStockDelegate = self
@@ -66,7 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func sendStockData(_ stockModel: StockModel) {
         lbname.text = stockModel.name
         lbsymbol.text = stockModel.symbol
-        lbprice.text = "\(stockModel.price)"
+        lbprice.text = "Price: $\(stockModel.price)"
+        lbdayhigh.text = "Day High: $\(stockModel.dayHigh)"
+        lbdaylow.text = "Day Low: $\(stockModel.dayLow)"
         
     }
     

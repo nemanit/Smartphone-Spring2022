@@ -12,7 +12,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StockTableViewCell" customModule="StockPrice" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Y2-jb-8ch">
-                        <rect key="frame" x="195" y="5" width="120" height="34"/>
+                        <rect key="frame" x="195" y="5" width="90" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="CbI-9O-MPK"/>
                         </constraints>
@@ -33,26 +33,30 @@
                             <action selector="getStock:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kwf-9p-ZcN"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jh-8C-SY8">
-                        <rect key="frame" x="100" y="12" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jh-8C-SY8">
+                        <rect key="frame" x="100" y="5" width="90" height="34"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="E4n-11-MJ0"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="9Y2-jb-8ch" secondAttribute="bottom" constant="5" id="2gp-Bw-cBv"/>
+                    <constraint firstItem="9Y2-jb-8ch" firstAttribute="height" secondItem="4ct-sk-0Dq" secondAttribute="height" id="5vx-Uu-vsX"/>
                     <constraint firstItem="4ct-sk-0Dq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7IZ-Xs-arJ"/>
                     <constraint firstItem="9Y2-jb-8ch" firstAttribute="leading" secondItem="8jh-8C-SY8" secondAttribute="trailing" constant="5" id="G0r-N1-z8r"/>
                     <constraint firstItem="8jh-8C-SY8" firstAttribute="leading" secondItem="4ct-sk-0Dq" secondAttribute="trailing" constant="5" id="RcY-EE-eb8"/>
                     <constraint firstAttribute="bottom" secondItem="4ct-sk-0Dq" secondAttribute="bottom" constant="5" id="Sce-oe-eoa"/>
+                    <constraint firstItem="9Y2-jb-8ch" firstAttribute="width" secondItem="4ct-sk-0Dq" secondAttribute="width" id="XUE-6L-bZO"/>
                     <constraint firstItem="9Y2-jb-8ch" firstAttribute="leading" secondItem="4ct-sk-0Dq" secondAttribute="trailing" constant="121" id="cDl-I4-l1h"/>
                     <constraint firstItem="9Y2-jb-8ch" firstAttribute="leading" secondItem="4ct-sk-0Dq" secondAttribute="trailing" constant="5" id="eZ9-83-Twi"/>
                     <constraint firstItem="9Y2-jb-8ch" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="eii-sS-Agh"/>
+                    <constraint firstItem="8jh-8C-SY8" firstAttribute="width" secondItem="4ct-sk-0Dq" secondAttribute="width" id="iDD-sj-1zc"/>
                     <constraint firstItem="9Y2-jb-8ch" firstAttribute="leading" secondItem="4ct-sk-0Dq" secondAttribute="trailing" constant="100" id="pfB-JI-xnv"/>
+                    <constraint firstItem="8jh-8C-SY8" firstAttribute="height" secondItem="4ct-sk-0Dq" secondAttribute="height" id="rG7-lR-76z"/>
                     <constraint firstAttribute="trailing" secondItem="9Y2-jb-8ch" secondAttribute="trailing" constant="5" id="wmW-6n-9Eg"/>
                     <constraint firstItem="4ct-sk-0Dq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="yft-du-GbV"/>
                 </constraints>
@@ -62,7 +66,7 @@
                 <outlet property="nameLabel" destination="8jh-8C-SY8" id="xAf-uC-y5w"/>
                 <outlet property="symbollabel" destination="4ct-sk-0Dq" id="guX-4q-Frg"/>
             </connections>
-            <point key="canvasLocation" x="139" y="120"/>
+            <point key="canvasLocation" x="137.68115942028987" y="119.86607142857142"/>
         </tableViewCell>
     </objects>
 </document>
