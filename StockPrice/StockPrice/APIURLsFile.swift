@@ -7,5 +7,4 @@
 
 import Foundation
 
-
 let stockAPIURL = "https://financialmodelingprep.com/api/v3/quote/"

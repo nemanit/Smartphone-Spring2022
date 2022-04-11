@@ -14,13 +14,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var lbname: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var lbprice: UILabel!
     @IBOutlet weak var lbsymbol: UILabel!
     @IBOutlet weak var tblView: UITableView!
-    
     @IBOutlet weak var lbdayhigh: UILabel!
     @IBOutlet weak var lbdaylow: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stocksModel = initializeStocks()
@@ -36,7 +35,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         .catch { error in
             print(error.localizedDescription)
         }
-        
     }
     
     func initializeStocks() -> [StockModel]{
@@ -45,37 +43,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let google = StockModel("Google", "GOOG");
         let microsoft = StockModel("Microsoft", "MSFT");
         let amazon = StockModel("Amazon", "AMZN");
-
         var modelArr = [StockModel]()
-        
         modelArr.append(aaple)
         modelArr.append(facebook)
         modelArr.append(google)
         modelArr.append(microsoft)
         modelArr.append(amazon)
-
         return modelArr
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return stocks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("StockTableViewCell", owner: self, options: nil)?.first as! StockTableViewCell
-        
         guard let stockModel = stocksModel?[indexPath.row] else {return cell}
-
         cell.symbollabel.text = stockModel.symbol
         cell.nameLabel.text = stockModel.name
         cell.stockSymbol = stockModel.symbol
         cell.stock = stockModel.name
         cell.sendStockDelegate = self
-        
         return cell
-
     }
     
     func sendStockData(_ stockModel: StockModel) {
@@ -84,8 +74,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         lbprice.text = "Price: $\(stockModel.price)"
         lbdayhigh.text = "Day High: $\(stockModel.dayHigh)"
         lbdaylow.text = "Day Low: $\(stockModel.dayLow)"
-        
     }
-    
 }
 
