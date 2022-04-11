@@ -6,6 +6,9 @@
 //
 
 import Foundation
+
 protocol SendStockDelegate {
+    
     func sendStockData(_ stockModel : StockModel)
+    
 }

@@ -64,6 +64,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53B9F2CA2803E72600D32081 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6369EF3728035ECD00C86469 /* APIKeyFile.swift */,
+				6369EF3928035F2000C86469 /* APIURLsFile.swift */,
+				6369EF3E280361B700C86469 /* NetworkFuncitons.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		53E68F1B28034E13004CC7E5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		53E68F2628034E13004CC7E5 /* StockPrice */ = {
 			isa = PBXGroup;
 			children = (
+				53B9F2CA2803E72600D32081 /* Utilities */,
 				6369EF3B2803608F00C86469 /* Model */,
 				53E68F2728034E13004CC7E5 /* AppDelegate.swift */,
 				53E68F2928034E13004CC7E5 /* SceneDelegate.swift */,
@@ -93,9 +104,6 @@
 				53E68F3028034E16004CC7E5 /* Assets.xcassets */,
 				53E68F3228034E16004CC7E5 /* LaunchScreen.storyboard */,
 				53E68F3528034E16004CC7E5 /* Info.plist */,
-				6369EF3728035ECD00C86469 /* APIKeyFile.swift */,
-				6369EF3928035F2000C86469 /* APIURLsFile.swift */,
-				6369EF3E280361B700C86469 /* NetworkFuncitons.swift */,
 				6369EF402803674800C86469 /* StockTableViewCell.swift */,
 				6369EF412803674800C86469 /* StockTableViewCell.xib */,
 				6369EF4428036B2400C86469 /* ProtocolSendStockData.swift */,
